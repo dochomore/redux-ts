@@ -3,7 +3,7 @@ import { Dispatch } from 'react';
 import ActionType from '../action-types/repositories.action-types';
 import Action from '../actions/repositories.actions';
 
-const searchRepositories = (term: string) => {
+export const searchRepositories = (term: string) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({ type: ActionType.SEARCH_REPOSITORIES });
     try {
@@ -30,6 +30,3 @@ const searchRepositories = (term: string) => {
     }
   };
 };
-
-
-export default searchRepositories;
