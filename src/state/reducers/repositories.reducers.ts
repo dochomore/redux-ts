@@ -1,4 +1,5 @@
-import ActionType from "../action-types/repositories.action-types";
+import ActionType from '../action-types/repositories.action-types';
+import Action from '../actions/repositories.actions';
 
 interface RepositoresState {
   loading: boolean;
@@ -6,8 +7,10 @@ interface RepositoresState {
   data: string[];
 }
 
-
-const reducer = (state: RepositoresState, action: Action): RepositoresState => {
+const repositoriesReducer = (
+  state: RepositoresState,
+  action: Action
+): RepositoresState => {
   switch (action.type) {
     case ActionType.SEARCH_REPOSITORIES:
       return { loading: true, error: null, data: [] };
@@ -20,4 +23,4 @@ const reducer = (state: RepositoresState, action: Action): RepositoresState => {
   }
 };
 
-export default reducer;
+export default repositoriesReducer;
